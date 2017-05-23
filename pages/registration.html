@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	.rowmainn{
+   margin-right: 314px;
+margin-left: 302px;
+    }
+    input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+	border: 1px solid red;
+}
+.div-error{
+
+    color: red;
+}
+
+	</style>
+</head>
+<body>
+ <div class="container">
+			<div class="row main rowmainn">
+				<div class="main-login main-center">
+				
+					<form class="" method="post" action="#" name="myForm">
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name" ng-model="myname" required/>
+									
+								</div>
+							</div>
+							<div class="div-error"><span ng-show="myForm.name.$touched && myForm.name.$invalid">The name is required.</span></div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="email" class="form-control" name="email" id="email"  placeholder="Enter your Email" ng-model="myemail" required/>
+								</div>
+							</div>
+						</div>
+                         <div class="div-error"><span ng-show="myForm.email.$touched && myForm.email.$invalid">Enter Valid Email.</span></div>
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username" ng-model="username" ng-minlength="4" ng-maxlength="8"/>
+								</div>
+							</div>
+						</div>
+                           <div class="div-error">
+                           	<span  class="div-error" ng-show="myForm.username.$error.minlength" class="help-block">Username is too short.</span>
+                            <span class="div-error" ng-show="myForm.username.$error.maxlength" class="help-block">Username is too long.</span>
+                           </div>
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="pw1" id="pw1"  placeholder="Enter your Password" ng-model='pw1' ng-required  ng-minlength="8" ng-maxlength="15" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/"/>
+								</div>
+							</div>
+						</div>
+						<div>
+                           <p ng-show="myForm.pw1.$error.required" class="div-error">*</p>
+						   <p ng-show="myForm.pw1.$error.minlength" class="div-error">
+						      Passwords must be between 8 and 15 characters.</p>
+						   <p ng-show="myForm.pw1.$error.pattern" class="div-error">
+						      Must contain one lower &amp; uppercase letter, and one non-alpha character </p>
+						</div>
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="pw2"   placeholder="Confirm your Password" ng-model='pw2' ng-required pw-check='pw1' />
+								</div>
+							</div>
+						</div>
+                        <div class='msg-block' ng-show='myForm.$error'>
+						  <span class='div-error' ng-show='myForm.pw2.$error.pwmatch'>
+						    Passwords doesn't match.
+						  </span>
+						</div>
+						<div class="form-group ">
+							
+							<button  type="submit" class="form-control btn btn-info" >
+							Register
+                       </button>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+
+		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
