@@ -8,15 +8,15 @@ app.config(["$routeProvider", function($routeProvider){
 	
 	$routeProvider
 		.when("/",{
-			templateUrl: "pages/home.html",
+			templateUrl: "home.html",
 			controller: "myHomeController"
 		})
 		.when("/registration",{
-			templateUrl : "pages/registration.html",
+			templateUrl : "registration.html",
 			controller: "myRegisterController"
 		})
 		.when("/login", {
-			templateUrl: "pages/login.html",
+			templateUrl: "login.html",
 			controller:"myLoginController"
 		})
 }])
@@ -30,10 +30,24 @@ app.controller("myHomeController", ["$scope","CustomerDetails", function($scope,
 	$scope.toggle = function() {
         $scope.myVar = !$scope.myVar;
     };
+
 }])
 
-app.controller("myRegisterController", ["$scope", function($scope){
-	$scope.message= "This is my register controller";
+app.controller("myRegisterController", ["$scope","regFactory", function($scope,regFactory){
+	//$scope.message= "This is my register controller";
+	console.log("jkdfhg")
+    alert("inside myRegisterController")
+       var registerUser = function(){
+       	console.log("inside myRegisterController",$scope.Form)
+			regFactory.registerUser($scope.Form)
+			          	.then(function(response){
+			          		console.log("from post"+response.data)
+			          		
+			          		
+			          	})
+
+       }
+
 }])
 
 app.controller("myLoginController", ["$scope", function($scope){

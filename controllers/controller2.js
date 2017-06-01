@@ -31,4 +31,4 @@ owner.controller("OwnerCtrl", ["$scope", "$location", "$log", function($scope, $
         if (form.$invalid)
             return;
     }
-}
+}])

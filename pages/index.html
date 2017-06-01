@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Basic AngularJS Application</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .navul{
+margin-left: 962px;
+}
+.homeicon{
+    margin-top: 16px;
+    color: white;
+}
+  </style>
+</head>
+<body>
+	<header> 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TechEraSkill IT</a>
+    </div>
+    
+    <ul class="nav navbar-nav navbar-right">
+	<li><span class="glyphicon glyphicon-home homeicon"></span></li>
+	<li><a href="#/">Home</a></li>
+      <li><a href="#/registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+	</header> 
+	<div class="container">
+		<ng-view></ng-view>
+	</div>
+<footer>
+<div class="container">
+  <div style="background-color: black;" class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <p class="navbar-text pull-left">© 2017 - copy rights Site Built By Mr. Papa Srinivas
+           <a href="http://tinyurl.com/tbvalid" target="_blank" >HTML 5 Validation</a>
+      </p>
+
+      <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn btn-danger btn pull-right">
+      <span class="glyphicon glyphicon-star"></span>  Terms&conditions</a>
+    </div>
+</div>
+</div>
+</footer>
+        	<script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular.js"></script>
+        	<script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
+        	<script type="text/javascript" src="contrApp.js"></script>
+          <script type="text/javascript" src="controller2.js"></script>
+           <script type="text/javascript" src="services/factory.js"></script>
+          <script type="text/javascript" src="filter.js"></script>
+          <script type="text/javascript" src="pwddirective.js"></script>
+          <script type="text/javascript" src="regFactory.js"></script>
+         <!--   <script type="text/javascript" src="model/reg.js"></script> -->
+</body>
+</html>
